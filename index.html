@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoticeBandhu — College Notice, Made Simple</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<header class="site-header">
+  <div class="logo"><span>NB</span></div>
+  <div><h1>NoticeBandhu</h1><p>College notice, made simple</p></div>
+  <span class="badge">No API · No login</span>
+</header>
+<main>
+  <section class="hero">
+    <span class="eyebrow">✦ Paste a notice. Get the important parts.</span>
+    <h2>What is it? <span class="grad">Last date? How much?</span><br>Who must act?</h2>
+    <p class="lead">Colleges send long English notices. NoticeBandhu pulls out the 4 things that actually matter — in simple words, in 3 languages, and read aloud for parents.</p>
+    <div class="stats">
+      <div><strong>4</strong><span>Key facts extracted</span></div>
+      <div><strong>3</strong><span>Languages: EN · BN · HI</span></div>
+      <div><strong>₹0</strong><span>No API, no cost</span></div>
+    </div>
+  </section>
+
+  <section class="card input-card">
+    <label class="section-label" for="notice">📋 Paste the notice here</label>
+    <textarea id="notice" rows="7" placeholder="Paste the full college notice text here…"></textarea>
+    <div class="sample-row">
+      <span>Try a sample:</span>
+      <button data-sample="exam">📝 Exam Form</button>
+      <button data-sample="fee">💰 Fee Due</button>
+      <button data-sample="scholarship">🎓 Scholarship</button>
+    </div>
+    <button id="analyze-btn" class="btn-primary">Decode This Notice →</button>
+    <p class="tip">💡 <strong>Honest v1 note:</strong> this works on pasted text. Photo/PDF reading (OCR) and full automatic translation are v2 — they need an external service, and I won't fake them.</p>
+  </section>
+
+  <section id="result" class="result" hidden>
+    <div class="card result-head">
+      <span id="r-category" class="topic-pill"></span>
+      <h2 id="r-what"></h2>
+      <div class="grid">
+        <div class="fact"><span class="fact-icon">📅</span><span class="fact-label">Last Date</span><strong id="r-date"></strong><em id="r-days"></em></div>
+        <div class="fact"><span class="fact-icon">💰</span><span class="fact-label">Fees / Amount</span><strong id="r-fee"></strong></div>
+        <div class="fact full"><span class="fact-icon">👥</span><span class="fact-label">Who Must Act</span><strong id="r-who"></strong></div>
+      </div>
+    </div>
+
+    <div class="card lang-card">
+      <h3>🇬🇧 Simple summary — English</h3>
+      <p id="r-simple" class="summary"></p>
+    </div>
+    <div class="card lang-card">
+      <h3>সহজ বাংলা সারাংশ</h3>
+      <p id="r-bn" class="summary"></p>
+    </div>
+    <div class="card lang-card">
+      <h3>सरल हिंदी सारांश</h3>
+      <p id="r-hi" class="summary"></p>
+    </div>
+
+    <div class="card audio-card">
+      <h3>🔊 Audio for Parent</h3>
+      <p class="muted">Uses your device's built-in voice — free, no recording. Play on speaker, or screen-record it to forward on WhatsApp.</p>
+      <select id="speak-lang">
+        <option value="en">English audio</option>
+        <option value="bn">Bengali audio</option>
+        <option value="hi">Hindi audio</option>
+      </select>
+      <div class="btn-row">
+        <button id="speak-btn" class="btn-primary">▶ Play Audio</button>
+        <button id="stop-btn" class="btn-ghost">⏹ Stop</button>
+      </div>
+    </div>
+
+    <div class="card wa-card">
+      <h3>💬 WhatsApp message — ready to forward</h3>
+      <textarea id="r-wa" rows="5" readonly></textarea>
+      <button id="copy-btn" class="btn-primary">📋 Copy WhatsApp Message</button>
+    </div>
+  </section>
+</main>
+<footer><p>Made by <strong>Aryan Kumar Shah</strong> · Always check the original notice too — dates and fees here come from the pasted text.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
