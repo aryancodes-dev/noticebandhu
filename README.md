@@ -1,4 +1,6 @@
 # NoticeBandhu — College Notice, Made Simple
+🔗 **Live Site:** https://aryancodes-dev.github.io/noticebandhu/
+
 
 Colleges send long, dense English notices on WhatsApp as PDFs/photos.
 First-generation students — and their parents, who must pay the fees or
